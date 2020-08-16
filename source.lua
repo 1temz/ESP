@@ -33,20 +33,22 @@ game:GetService("RunService").Stepped:Connect(function()
 		for i, v in pairs((game:GetService("Players")):GetChildren()) do
 			if v.Name ~= game:GetService("Players").LocalPlayer.Name and v.Character and v.Character:FindFirstChild(SelectedPart) and v.Character and Tracers then
 				if not tracing[v.Name] then
-					tracing[v.Name] = { v.Character }
+					tracing[v.Name] = {
+						v.Character
+					}
 				end
 				local camPos, isVis = game:GetService("Workspace").CurrentCamera:WorldToScreenPoint(v.Character[SelectedPart].Position)
 				if Tracers then
 					if tracing[v.Name][2] then
 						tracing[v.Name][2].Visible = isVis and Tracers
 						tracing[v.Name][2].Color = TracerColor
-                        tracing[v.Name][2].To = Vector2.new(camPos.X, camPos.Y + (game:GetService("GuiService")):GetGuiInset().Y)
-                        tracing[v.Name][2].From = Vector2.new(game:GetService("Players").LocalPlayer:GetMouse().X, game:GetService("Players").LocalPlayer:GetMouse().Y + (game:GetService("GuiService")):GetGuiInset().Y)
+						tracing[v.Name][2].To = Vector2.new(camPos.X, camPos.Y + (game:GetService("GuiService")):GetGuiInset().Y)
+						tracing[v.Name][2].From = Vector2.new(game:GetService("Players").LocalPlayer:GetMouse().X, game:GetService("Players").LocalPlayer:GetMouse().Y + (game:GetService("GuiService")):GetGuiInset().Y)
 					else
 						tracing[v.Name][2] = tracer.create()
 						tracing[v.Name][2].Visible = isVis and Tracers
-                        tracing[v.Name][2].To = Vector2.new(camPos.X, camPos.Y + (game:GetService("GuiService")):GetGuiInset().Y)
-                        tracing[v.Name][2].From = Vector2.new(game:GetService("Players").LocalPlayer:GetMouse().X, game:GetService("Players").LocalPlayer:GetMouse().Y + (game:GetService("GuiService")):GetGuiInset().Y)
+						tracing[v.Name][2].To = Vector2.new(camPos.X, camPos.Y + (game:GetService("GuiService")):GetGuiInset().Y)
+						tracing[v.Name][2].From = Vector2.new(game:GetService("Players").LocalPlayer:GetMouse().X, game:GetService("Players").LocalPlayer:GetMouse().Y + (game:GetService("GuiService")):GetGuiInset().Y)
 						tracing[v.Name][2].Color = TracerColor
 					end
 				end
@@ -56,9 +58,9 @@ game:GetService("RunService").Stepped:Connect(function()
 						tracing[v.Name][3].Size = Vector2.new(2000 / camPos.Z, 4500 / camPos.Z)
 						tracing[v.Name][3].Color = BoxesColor
 						tracing[v.Name][3].Position = Vector2.new(camPos.X - tracing[v.Name][3].Size.X / 2, camPos.Y + game:GetService("GuiService"):GetGuiInset().Y - tracing[v.Name][3].Size.Y / 2)
-                    else
-                        tracing[v.Name][3] = box.create()
-                        tracing[v.Name][3].Visible = isVis and Boxes
+					else
+						tracing[v.Name][3] = box.create()
+						tracing[v.Name][3].Visible = isVis and Boxes
 						tracing[v.Name][3].Size = Vector2.new(2000 / camPos.Z, 4500 / camPos.Z)
 						tracing[v.Name][3].Color = BoxesColor
 						tracing[v.Name][3].Position = Vector2.new(camPos.X - tracing[v.Name][3].Size.X / 2, camPos.Y + game:GetService("GuiService"):GetGuiInset().Y - tracing[v.Name][3].Size.Y / 2)
@@ -97,16 +99,16 @@ end)
 OpenSourceESP = {}
 function OpenSourceESP:Tracers(bool, color)
 	if bool == true and not Tracers then
-        Tracers = true
-        TracerColor = color
+		Tracers = true
+		TracerColor = color
 	elseif Tracers and bool == false then
 		Tracers = false
 	end
 end
 function OpenSourceESP:Boxes(bool, color)
 	if bool == true and not Boxes then
-        Boxes = true
-        BoxesColor = color
+		Boxes = true
+		BoxesColor = color
 	elseif Boxes and bool == false then
 		Boxes = false
 	end
