@@ -111,3 +111,5 @@ function OpenSourceESP:Boxes(bool, color)
 		Boxes = false
 	end
 end
+
+return OpenSourceESP
