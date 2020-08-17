@@ -1,9 +1,3 @@
---[[
-	code generated using luamin.js, Herrtt#3868
---]]
-
-
-
 -- ## ESP Functions Starting ## --
 Tracers = false
 Boxes = false
