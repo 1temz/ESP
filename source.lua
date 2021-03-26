@@ -1,4 +1,4 @@
--- ## ESP Functions Starting ## --
+
 Tracers = false
 Boxes = false
 CheckTeams = false
