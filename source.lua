@@ -6,7 +6,7 @@ CheckTeams = false
 TracerColor = Color3.fromRGB(255, 255, 255)
 BoxesColor = Color3.fromRGB(255, 255, 255)
 
-SelectedPart = "HumanoidRootPart" -- tracer & box part
+SelectedPart = "HumanoidRootPart"
 
 local tracing = {}
 local tracer = {
