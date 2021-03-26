@@ -150,7 +150,6 @@ game:GetService("Players").PlayerRemoving:Connect(function(remove_player)
 		tracing[remove_player.Name] = nil
 	end
 end)
--- ## ESP Functions Finished ## --
 
 OpenSourceESP = {}
 function OpenSourceESP:Tracers(bool, color)
